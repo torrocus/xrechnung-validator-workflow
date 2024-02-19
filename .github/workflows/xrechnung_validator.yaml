@@ -48,7 +48,7 @@ jobs:
         run: unzip -n validator-configuration.zip
       - name: Run Validator
         id: validator
-        run: java -jar $VALIDATOR_JAR_FILE -s scenarios.xml -r ${PWD} -h $INPUT_FILE
+        run: java -jar "$VALIDATOR_JAR_FILE" -s scenarios.xml -r "${PWD}" -h "$INPUT_FILE"
       - name: Upload report if failed
         if: failure()
         uses: actions/upload-artifact@v4
